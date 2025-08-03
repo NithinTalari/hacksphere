@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Smart Traffic Management",
+    "shortDesc": "Manage urban traffic using IoT and real-time data.",
+    "fullStatements": [
+      "Use real-time traffic signals using sensors.",
+      "Design smart intersections that adapt to flow.",
+      "Implement emergency vehicle prioritization."
+    ]
+  },
+  {
+    "title": "AI in Education",
+    "shortDesc": "Create virtual tutors using AI for remote learning.",
+    "fullStatements": [
+      "Develop an adaptive learning AI model.",
+      "Use NLP for student doubt resolution.",
+      "Gamify the learning experience."
+    ]
+  },
+  {
+    "title": "Health Monitoring App",
+    "shortDesc": "Track health vitals and provide alerts.",
+    "fullStatements": [
+      "Detect abnormal heart rate and notify emergency contacts.",
+      "Track calorie burn and health trends.",
+      "Integrate wearable IoT devices."
+    ]
+  },
+  {
+    "title": "Waste Management System",
+    "shortDesc": "Develop a smart waste segregation system.",
+    "fullStatements": [
+      "Classify waste into biodegradable and non-biodegradable.",
+      "Use smart bins with sensors for waste levels.",
+      "Integrate with municipal collection routes."
+    ]
+  },
+  {
+    "title": "Disaster Alert System",
+    "shortDesc": "Alert nearby people during natural calamities.",
+    "fullStatements": [
+      "Detect earthquakes, floods, and landslides using sensors.",
+      "Send SMS and mobile notifications to users in danger zones.",
+      "Map safe routes and shelters."
+    ]
+  },
+  {
+    "title": "Water Quality Monitor",
+    "shortDesc": "Monitor and analyze water quality in real time.",
+    "fullStatements": [
+      "Use pH, turbidity, and temperature sensors.",
+      "Display contamination level with alerts.",
+      "Suggest purification techniques."
+    ]
+  }
+]

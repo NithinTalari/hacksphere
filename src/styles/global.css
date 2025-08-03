@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+/* ====== 1. THEME & COLOR VARIABLES ====== */
+/* CONSOLIDATED: All theme variables are now in one place for light and dark modes. */
+body {
+  /* Default Light Mode */
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --heading-color: #222222;
+  --accent-color: #6f3dff;
+  --navbar-bg: #f8f9fa;
+  --footer-bg: #f1f1f1;
+  --card-bg: #f5f5f5;
+  --highlight-color: #6c2bd9;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --heading-color: #ffffff;
+  --accent-color: #e84dd4;
+  --navbar-bg: #0f0f0f;
+  --footer-bg: #111111;
+  --card-bg: #1f1f1f;
+  --highlight-color: #a259ff;
+}
+
+/* ====== 2. RESET & BASE ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* MERGED: Combined the two `body` rules into one. */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* FIX: Prevents content from being hidden under the fixed header. */
+  padding-top: 60px;
+}
+
+/* ====== 3. NAVBAR ====== */
+header {
+  position: fixed;
+  background-color: var(--navbar-bg);
+  padding: 15px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 60px;
+}
+
+/* ====== 4. TYPOGRAPHY & UTILITIES ====== */
+.gradient-text {
+  background: linear-gradient(90deg, #1349cf, #cdd3e2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+}
+
+.logo.gradient-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-title,
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--heading-color);
+  text-align: center;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* FIX: This class lets you create the split-color heading. */
+.text-highlight {
+  color: var(--heading-color);
+}
+body.dark-mode .text-highlight {
+  /* In dark mode, this color will be white. */
+  color: #ffffff;
+}
+
+.highlight {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+/* ====== 5. LAYOUT & CONTAINERS ====== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-container {
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* MERGED: Combined '.combined-section' styles. */
+.combined-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  flex-wrap: wrap;
+}
+
+.half-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* MERGED: Combined '.card-container' and other grid styles. */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* ====== 6. COMPONENTS ====== */
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  /* Sets hero to be full viewport height minus the navbar height */
+  height: calc(100vh - 60px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--heading-color);
+}
+
+.hero-title .gradient-text {
+  font-size: 8rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero-date,
+.hero-time {
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+}
+
+
+/* --- Cards --- */
+/* MERGED: Combined all '.card', '.custom-card', and '.problem-card' styles. */
+.card, .custom-card, .problem-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.card:hover, .custom-card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+/* --- Modals / Popups --- */
+/* MERGED: Combined '.modal-overlay' and '.popup-overlay' styles. */
+.modal-overlay, .popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* MERGED: Combined '.modal-content' and '.popup-content' styles. */
+.modal-content, .popup-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-title, .popup-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.popup-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.popup-list {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.close-button, .popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+/* --- Buttons --- */
+.view-button {
+  background-color: #6f3dff;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* --- Forms --- */
+.registration-form {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0f172a;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+.registration-form input:focus {
+  outline: none;
+  border: 1px solid #3b82f6;
+  background-color: #1e293b;
+}
+
+.registration-form button {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+  background-color: #2563eb;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+  background-color: var(--bg-color);
+  padding: 4rem 2rem;
+  border-radius: 16px;
+  margin-top: 3rem;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.75rem;
+  margin-bottom: 3rem;
+}
+
+.contact-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+.contact-item {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.contact-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.contact-item p,
+.contact-item a {
+  font-size: 1.1rem;
+  word-break: break-word;
+  color: var(--text-color);
+  text-decoration: none;
+}
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+
+/* --- Footer --- */
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons {
+  background-color: inherit;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: #fff;         /* Light background to make icon visible */
+  border-radius: 50%;             /* Makes the icon background circular */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Hover animation */
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Dark mode fix (corrected selector) */
+body.dark-mode .social-icons img {
+  background-color: #1f1f1f;       /* Dark background */
+  filter: invert(1);
+}
+
+/* ====== 7. PARTICLES & AOS ====== */
+#tsparticles,
+.particles-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+[data-aos] {
+  transition-property: transform, opacity;
+}
+
+/* ====== 8. RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-title .gradient-text {
+    font-size: 5rem;
+  }
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

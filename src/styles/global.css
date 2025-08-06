@@ -290,52 +290,80 @@ body.dark-mode .text-highlight {
   cursor: pointer;
 }
 
-/* --- Forms --- */
-.registration-form {
-  background-color: #1e293b;
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  max-width: 800px;
-  margin: 2rem auto;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.registration-form input {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 1.5rem;
+  background: none;
   border: none;
-  border-radius: 8px;
-  background-color: #0f172a;
-  color: #f1f1f1;
-  font-size: 1rem;
-}
-
-.registration-form input:focus {
-  outline: none;
-  border: 1px solid #3b82f6;
-  background-color: #1e293b;
-}
-
-.registration-form button {
-  background-color: #3b82f6;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.registration-form button:hover {
-  background-color: #2563eb;
+/* Form Styles */
+.team-form {
+  display: flex;
+  flex-direction: column;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
+.team-form input {
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.member-section label {
+  margin-top: 1rem;
+  font-weight: bold;
+  display: block;
+}
+
+.add-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* --- Contact Section --- */
@@ -455,4 +483,237 @@ body.dark-mode .social-icons img {
     width: 100%;
     text-align: center;
   }
+}
+.faqs {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.faq-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.faq-btn:hover {
+  background-color: #005fd1;
+}
+
+/* Modal styles */
+.faq-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.faq-modal-content {
+  background: white;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.faq-close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.faq-item {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.faq-item strong {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== DARK MODE FOR FAQ MODAL ===== */
+body.dark .faq-modal-content {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark .faq-close {
+  color: #f1f1f1;
+}
+
+body.dark .faq-btn {
+  background-color: #0077ff;
+  color: white;
+}
+
+body.dark .faq-btn:hover {
+  background-color: #005fd1;
+}
+
+body.dark .faq-item strong {
+  color: #ffffff;
+}
+
+.submit-project {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Modal Styles */
+.submit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.submit-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.submit-close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.submit-form input,
+.submit-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.7rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.submit-buttons button {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.submit-buttons button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Dark Mode Styles for Project Submission */
+
+body.dark .submit-modal-content {
+  background-color: black;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark .submit-form input,
+body.dark .submit-form textarea {
+  background-color: black;
+  color: black;
+  border: 1px solid #555;
+}
+
+body.dark .submit-buttons button[type="submit"] {
+  background-color: #0077ff;
+  color: white;
+}
+
+body.dark .submit-buttons button[type="button"] {
+  background-color: #444;
+  color: white;
+}
+
+body.dark .submit-close {
+  color: #f1f1f1;
+}
+
+.about-page {
+  padding: 3rem 1rem;
+  line-height: 1.8;
+}
+
+.about-page h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.about-section h3 {
+  color: #0077ff;
+  margin-bottom: 0.5rem;
+}
+
+.about-section ul {
+  padding-left: 1.2rem;
+}
+
+.about-section ul li {
+  margin: 0.5rem 0;
 }
